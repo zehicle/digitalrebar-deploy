@@ -47,16 +47,16 @@ Step 2. Download Code & Prerequists
 These steps are for **default** configuration.  Advanced configurations can adapt to more complex environments.
 
 - Make sure you have *disabled* the following services locally:
-   - bind: DNS server on :53 (e.g.: ``killall dnsmasq``)
-   - proxy: local proxy on :8123 (e.g.: ``service squid3 stop``) 
-   - db: PostgreSQL on :5432
-   - rails: local web apps on :3000
-   - when starting Compose, you will be alerted if there are other `assigned port conflicts <docker-compose-common.yml>`_ .
+  - bind: DNS server on :53 (e.g.: ``killall dnsmasq``)
+  - proxy: local proxy on :8123 (e.g.: ``service squid3 stop``) 
+  - db: PostgreSQL on :5432
+  - rails: local web apps on :3000
+  - when starting Compose, you will be alerted if there are other `assigned port conflicts <docker-compose-common.yml>`_ .
 - Make sure you have an ssh key [4]_
 - (optional) Enable passwordless sudo [5]_
 - Download at least one ISO from the list in `provisioner.yml <https://github.com/digitalrebar/core/blob/develop/barclamps/provisioner.yml#L135>`_ and copy to ``~/.cache/opencrowbar/tftpboot/isos``
 - Install git.
-- Clone RackN Digital Rebar Compose: ``git clone https://https://github.com/rackn/container-install.git compose``
+- Clone RackN Digital Rebar Compose: ``git clone https://https://github.com/rackn/container-install.git compose2``
 - Run the ``./setup`` command in that repo
 
 Step 3. Deploy infrastructure containers

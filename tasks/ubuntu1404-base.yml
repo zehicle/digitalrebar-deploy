@@ -1,5 +1,5 @@
 ---
-  - name: Update repos (was not working from apt:)
+  - name: Update repos (was not working from apt:) by RackN 2015
     command: sudo apt-get update -y
   - name: Install Prereqs [SLOW]
     apt: name={{ item }} state=latest
@@ -24,4 +24,6 @@
   - name: no dns servers
     command: sudo killall dnsmasq
     ignore_errors: yes
-
+  - name: Stop ntp
+    service: name=ntp state=stopped
+    ignore_errors: yes

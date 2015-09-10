@@ -31,11 +31,11 @@
       args:
         chdir: compose
         creates: compose/components/rebar_api/digitalrebar/core
-    - name: Stop ntp
-      service: name=ntp state=stopped
-    - name: Stop dnsmasq
-      command: killall dnsmasq
       ignore_errors: yes
+    - name: Pull Images [SLOW]
+      command: /usr/local/bin/docker-compose pull
+      args:
+        chdir: compose
     - name: Run compose
       command: /usr/local/bin/docker-compose up -d
       args:

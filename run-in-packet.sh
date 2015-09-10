@@ -1,11 +1,15 @@
 #!/bin/bash
 
+# Prereqs: 
+#   1. sudo apt-get install jq
+#   2. ~/.dr_info w/ API_KEY="xxx"
+
 # Include RackN Project API Key in Packet
 . ~/.dr_info
 
 NODENAME=$1
 if [ "$NODENAME" == "" ] ; then
-  NODENAME="$USER1"
+  NODENAME="${USER}1"
 fi
 
 PROJ_ID=`curl -s -H "X-Auth-Token: $API_KEY" https://api.packet.net/projects | jq -r ".projects[].id"`

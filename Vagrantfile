@@ -43,16 +43,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "node1", autostart:false do |slave|
 
     slave.vm.box = BASE_OS_BOX
+    slave.vm.hostname = "node1"
     slave.vm.network "private_network", ip: "192.168.124.101", auto_config: true
     slave.vm.network "private_network",  ip: "10.10.10.101", auto_config: false
     slave.vm.provider "virtualbox" do |vb|
       vb.memory = SLAVE_RAM
     end
+    # need jq
+
   end
 
   config.vm.define "node2", autostart:false do |slave|
 
     slave.vm.box = BASE_OS_BOX
+    slave.vm.hostname = "node2"
     slave.vm.network "private_network", ip: "192.168.124.102", auto_config: true
     slave.vm.network "private_network",  ip: "10.10.10.102", auto_config: false
     slave.vm.provider "virtualbox" do |vb|
@@ -63,6 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "node3", autostart:false do |slave|
 
     slave.vm.box = BASE_OS_BOX
+    slave.vm.hostname = "node3"
     slave.vm.network "private_network", ip: "192.168.124.103", auto_config: true
     slave.vm.network "private_network",  ip: "10.10.10.103", auto_config: false
     slave.vm.provider "virtualbox" do |vb|

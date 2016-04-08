@@ -11,6 +11,9 @@
 /.vagrant/
 /compose/digitalrebar
 
+# upload ISOs to cache stored here
+/isos
+
 .#*
 *~
 *.dia.autosave
